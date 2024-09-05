@@ -10,7 +10,7 @@ Referensi : https://developers.google.com/identity/gsi/web/guides/display-button
    ```bash
    composer install
 
-2. Ubah nama file .env.example menjadi .env dan sesuaikan konfigurasi sesuai kebutuhan.
+2. Ubah nama file .env.contoh menjadi .env dan sesuaikan konfigurasi sesuai kebutuhan.
 
 3. Jalankan aplikasi di server lokal atau web server:
    ```bash
