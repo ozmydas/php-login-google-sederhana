@@ -1,8 +1,10 @@
-<?php 
+<?php
 
 require_once('load_env.php');
 
+// klo request nya buat LOGOUT
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
+  // hapus session
   session_destroy();
 
   $_SESSION['userdata'] = null;
@@ -66,14 +68,17 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     <h1>Hello, World!</h1>
 
     <div class="signin-container">
+
+      <!-- munculin tombol login -->
       <?php if (empty($_SESSION['userdata'])): ?>
 
-        <div id="g_id_onload" data-client_id="<?=$CLIENT_ID ?>"
-          data-login_uri="<?=$WEB_URL?>/callback.php" data-auto_prompt="false"></div>
+        <div id="g_id_onload" data-client_id="<?= $CLIENT_ID ?>" data-login_uri="<?= $WEB_URL ?>/callback.php"
+          data-auto_prompt="false"></div>
         <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline" data-text="sign_in_with"
           data-shape="rectangular" data-logo_alignment="left"></div>
 
       <?php else: ?>
+        <!-- munculin userdata + tombol logout -->
         <div class="userdata">
           <?php print_r($_SESSION['userdata']); ?>
         </div>
